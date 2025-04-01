@@ -1,4 +1,4 @@
-package chpater2
+package chapter2
 
 import org.mogun.chapter2.RPNCalculator.calc
 import strikt.api.expectThat

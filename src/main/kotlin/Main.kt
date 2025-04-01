@@ -3,9 +3,10 @@ package org.mogun
 import org.mogun.chapter2.RPNCalculator.calc
 
 fun main() {
-    val res4 = calc("2 5 * 4 + 3 2 * 1 + %")
-    println(res4)
+    sumAndLog(10, 2, ::println)
 }
+
+fun sumAndLog(a: Int, b: Int, log:(Int) -> Unit): Int = (a+b).also(log)
 
 data class BowlingGameFP(val rolls: List<Int>) {
     fun roll(pins: Int): BowlingGameFP

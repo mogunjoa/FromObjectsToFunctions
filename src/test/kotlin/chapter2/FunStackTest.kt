@@ -1,4 +1,4 @@
-package chpater2
+package chapter2
 
 import org.junit.jupiter.api.Test
 import org.mogun.chapter2.FunStack
