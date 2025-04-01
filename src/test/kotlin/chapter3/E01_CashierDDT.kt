@@ -20,4 +20,17 @@ class E01_CashierDDT: DomainDrivenTest<CashierActions>(allActions) {
             alice.`check total is #total`(11.0)
         )
     }
+
+    @DDT
+    fun `customer can benefit from 3x2 offer`() = ddtScenario {
+        val prices = mapOf(carrot to 2.0, milk to 5.0)
+        setUp {
+            setupPrices(prices)
+            setup3x2(milk)
+        }.thenPlay(
+            alice.`can add #qty #item`(3, carrot),
+            alice.`can add #qty #item`(3, milk),
+            alice.`check total is #total`(16.0)
+        )
+    }
 }

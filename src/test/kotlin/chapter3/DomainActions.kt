@@ -23,6 +23,10 @@ object DomainActions : CashierActions {
     override fun addItem(actorName: String, qty: Int, item: Item) =
         cashier.addItem(actorName, qty, item)
 
+    override fun setup3x2(item: Item) {
+        cashier.setup3x2(item)
+    }
+
     override val protocol: DdtProtocol
         get() = DomainOnly
 
